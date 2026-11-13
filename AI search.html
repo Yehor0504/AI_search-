@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <script src="script.js" defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI search</title>
+    <link rel="stylesheet" href="styly.css" type = "text/css">
+
+    <link rel="icon" type="image/x-icon" href="obrazky/favicon.png">
+
+</head>
+
+<body>
+    <h2 class = "regist"> AI Search</h2>
+
+    <br>
+
+    <form class="regist1" id="myForm">
+     <input type="text" list="aiList" name="fname" id="nameInput" placeholder="Задайте имя ai" required>
+     <datalist id="aiList">
+         <option value="Gemini">
+         <option value="ChatGPT">
+         <option value="Deepseek">
+    </datalist>
+    <button type="submit">Enter</button>
+    <button type="reset">Clear</button>
+    </form>
+       <button class ='my-button' onclick="alert('Type the name of ai (Gemini or ChatGPT or Deepseek)')">Help</button>
+       <button class ='my-button' onclick="alert('Gemini, ChatGPT, Deepseek')">Including AI</button>
+    
+
+   
+</form>
+
+    <script>
+    const form = document.getElementById('myForm'); // Получаем ссылку на форму
+    const nameInput = document.getElementById('nameInput'); // Получаем ссылку на поле ввода имени
+
+    form.addEventListener('submit', function(event) { // Добавляем обработчик события отправки формы
+        // Отменяем стандартную отправку формы
+        event.preventDefault(); 
+
+        const cleanName = nameInput.value.replace(/\s+/g, '').toLowerCase();
+
+        if (cleanName === 'gemini') {
+        // Переход на сайт для пользователя с именем "Gemini"
+        window.location.href = 'https://gemini.google.com/app?hl=ru'; 
+        } else if (cleanName === 'chatgpt') {
+        // Переход на сайт для пользователя с именем "ChatGPT"
+        window.location.href = 'https://chatgpt.com'; 
+        } else if (cleanName === 'deepseek') {
+        // Переход на сайт для пользователя с именем "Deepseek"
+        window.location.href = 'https://www.deepseek.com/en/'; 
+        } else { // Если введено другое имя, выводим сообщение об ошибке
+            alert('Please enter either "Gemini" or "ChatGPT" or "Deepseek"');
+        }
+    });
+    </script>
+
+    
+    <img class="gpt" src = "obrazky/chatgpt.jpg">
+    <h1>ChatGPT</h1>
+    <img class="gemini" src = "obrazky/gemini.png">
+    <h1>Gemini</h1>
+    <img class="deepseek" src = "obrazky/deepseek.jpg">
+    <h1>Deepseek</h1>
+</body>
+</html>
